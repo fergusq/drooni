@@ -1,0 +1,56 @@
+= Määrittelydokumentti =
+
+Projektin tarkoituksena on tuottaa Parrot AR.Drone 2.0 -lennokkia ohjaava tietokoneohjelma.
+
+== Parrot AR.Drone 2.0 ==
+
+Käytössä on Parrot-merkkinen drooni, johon kuuluvat seuraavat sensorit:<ref>https://www.parrot.com/global/drones/parrot-ardrone-20-elite-edition#technicals</ref>
+
+* Gyroskooppi
+* Kiihtyvyysanturi
+* Magnetometri
+* Paineanturi
+* Ultraääneen perustuva korkeusmittaaja
+* Etukamera ja alakamera
+
+Lennokki on kauko-ohjattava ja siihen voi yhdistää laitteita sen luoman Wifi-verkon avulla.
+
+== Projektin tavoitteet ==
+
+Projektin tarkoituksena on valmistaa ohjelma, joka ohjaa autonomisesti droonia.
+Ohjelma tulkitsee sen sensorien lähettämää dataa ja tekee sen perusteella ohjauspäätökset.
+Alla on lueteltu tärkeimmät tavoitteet.
+
+# Ohjelma hallitsee lennokkia. Ohjelma ei vahingoita lennokkia törmäilemällä, pudottamalla tai muilla tavoilla. Lennokki ei myöskään saa karata.
+# Lennokki vuorovaikuttaa ympäristönsä kanssa luonnollisesti. Kuka tahansa oppii nopeasti käyttämään lennokkiohjelmaa.
+# Ohjelma toimii erilaisissa ympäristöissä, niin ulkona kuin sisälläkin.
+
+== Ohjelmaideoita ==
+
+Nämä selkiintyvät, kunhan saan testattua lennokkia lisää.
+
+=== Väriä seuraava ohjelma ===
+
+Ohjelma kuljettaa lennokkia eteenpäin, jos lennokin näkökentässä on tietyn värinen esine.
+Lennokkia käännetään tarvittaessa, jotta esine pysyy suoraan edessä.
+
+Ohjelma toteutetaan analysoimalla etukameran tuottamaa dataa ja etsimällä kuvasta tietyn värisiä pikseleitä.
+
+=== Reitin muistava ohjelma / Vartijalennokki ===
+
+Ohjelma pitää kirjaa lennokin liikkeistä ja yrittää muistaa ne, pystyen palauttamaan lennokin takaisin lähtöpisteeseensä.
+
+Lennokin voisi esimerkiksi asettaa kiertämään valmiiksi määritettyä reittiä ja lähettämään kuvaa tietokoneelle.
+Lennokki toimisi siis eräänlaisena vartijana.
+
+=== Lennokkipeli ===
+
+Voisiko lennokin saada pelaamaan jotain peliä?
+Kuinka saada peli tarpeeksi turvalliseksi lennokin ja ihmisten kannalta?
+
+Ideoita:
+
+* Lennokkihärkätaistelu
+* Lennokinharhautus
+* Lennokkivarkaus
+* Lennokkihippa

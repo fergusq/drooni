@@ -2,6 +2,8 @@
 
 Projektin tarkoituksena on tuottaa Parrot AR.Drone 2.0 -lennokkia ohjaava tietokoneohjelma.
 
+__TOC__
+
 == Parrot AR.Drone 2.0 ==
 
 Käytössä on Parrot-merkkinen drooni, johon kuuluvat seuraavat sensorit:<ref>https://www.parrot.com/global/drones/parrot-ardrone-20-elite-edition#technicals</ref>
@@ -54,3 +56,7 @@ Ideoita:
 * Lennokinharhautus
 * Lennokkivarkaus
 * Lennokkihippa
+
+== Lähteet ==
+
+<references/>

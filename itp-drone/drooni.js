@@ -13,7 +13,7 @@ var ohjattava_lennokki = arDrone.createClient();
   laskeutua: ohjattava_lennokki.land,
   pysähtyä: function() { this.up(0); this.front(0); }
  };
- for (var method in methods0) {
+ for (const method in methods0) {
   ohjattava_lennokki[method+"_A__N"] = methods0[method];
   ohjattava_lennokki[method+"_A_Kuluttua_N"] = function(t) { this.after(t, methods0[method]); };
  }
@@ -24,7 +24,7 @@ var ohjattava_lennokki = arDrone.createClient();
   edetä: function(n) { this.front(n/100); },
   perääntyä: function(n) { this.back(n/100); }
  };
- for (var method in methods1) {
+ for (const method in methods1) {
   ohjattava_lennokki[method+"_A_Uo_N"] = methods1[method];
   ohjattava_lennokki[method+"_A_KuluttuaUo_N"] = function(t, n) { this.after(t, function() { methods1[method].call(this, n); }); };
  }

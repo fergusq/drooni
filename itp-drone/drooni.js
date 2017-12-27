@@ -34,34 +34,9 @@ var ohjattava_lennokki = arDrone.createClient();
  ohjattava_lennokki.getPngStream()
    .on('error', console.log)
    .on('data', function(pngBuffer) {
-    if (ohjattava_lennokki.käsittellä_kuva_A__N) {
-     ohjattava_lennokki.käsittellä_kuva_A__N(new ImageParser(pngBuffer));
+    if (ohjattava_lennokki.vastaanottaa_A__N) {
+     var img = new ImageParser(pngBuffer);
+     img.parse(err => ohjattava_lennokki.vastaanottaa_A__N(img));
     }
   });
-}
-
-////////////////////////////
-// IMAGE PARSER INTERFACE //
-////////////////////////////
-
-var ImageParser = require('image-parser');
-
-ImageParser.prototype.f_pikseli = function() {
- if (this.pikselit === undefined) this.pikselit = this.pixels();
- return this.pikselit;
-};
-
-var PixelClass = require('pixel-class');
-
-PixelClass.prototype.f_punaisuus = function() { return this.r; };
-PixelClass.prototype.f_vihreys = function() { return this.g; };
-PixelClass.prototype.f_sinisyys = function() { return this.b; };
-PixelClass.prototype.f_läpinäkyvyys = function() { return this.a; };
-
-///////////////////////
-// CONSOLE INTERFACE //
-///////////////////////
-
-function tulostaa_N(t) {
- console.log(t);
 }

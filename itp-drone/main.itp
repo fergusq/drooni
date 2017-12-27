@@ -4,6 +4,6 @@ Kun aloitetaan,
 Kun ohjattava lennokki suorittaa ohjelman,
 	se nousee ilmaan,
 	se etenee 20 nopeusyksiköllä 2000 millisekunnin kuluttua,
-	se perääntyy 20 nopeusyksiköllä 1000 millisekunnin kuluttua,
+	se perääntyy 20 nopeusyksiköllä 3000 millisekunnin kuluttua,
 	se pysähtyy 1000 millisekunnin kuluttua
 ja	se laskeutuu 1000 millisekunnin kuluttua.

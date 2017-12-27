@@ -1,0 +1,36 @@
+Olkoon tärkeä kuvajäsentäjä uusi kuvajäsentäjä, jonka sisääntulo on tiedosto "testit/kaukana.jpg".
+Olkoon mitattu punaisuus nolla.
+Olkoon nätti kuva uusi muuttuja.
+
+Kun aloitetaan,
+	tärkeä kuvajäsentäjä jäsentää kuvansa
+ja	tärkeän kuvajäsentäjän valmistuessa käyköön niin, että
+		nätiksi kuvaksi asetetaan tärkeän kuvajäsentäjän kuva,
+		tulostetaan koodi "<svg>" sekä koodi "<image x=\l0\l y=\l0\l width=\l100%\l height=\l100%\l xlink:href=\lkaukana.jpg\l />",
+		nätin kuvan jokainen sarake piirretään
+	ja	tulostetaan koodi "</svg>".
+
+Kun pieni pikselilista piirretään,
+	tulostetaan koodi "<rect x=\l"
+		yhdistettynä sen indeksiin,
+		yhdistettynä koodiin "\l y=\l0\l width=\l1\l height=\l",
+		yhdistettynä sen pikselien määrään,
+		yhdistettynä koodiin "\l fill=\lrgba(0,",
+		yhdistettynä näytettävään väriin
+	ja	yhdistettynä koodiin ",0,70%)\l/>",
+	missä	näytettävä väri on riippuen siitä, onko pienen pikselilistan punavaltaisuus suurempi tai yhtä suuri kuin nätin kuvan jokaisen sarakkeen punavaltaisuus,
+		joko	255
+		tai	sen punavaltaisuus jaettuna sen pikselien määrällä, kerrottuna 255:llä ja pyöristettynä.
+
+Pikselilistan punavaltaisuus on pysyvästi
+	riippuen siitä, onko sen pikselien määrä nolla,
+	joko	nolla
+	tai	sen ensimmäisen pikselin punavaltaisuus lisättynä sen hännän punavaltaisuuteen.
+
+Pikselin punavaltaisuus on
+	sen punaisuuden toinen potenssi jaettuna
+		sen punaisuudella
+		lisättynä sen vihreyteen,
+		lisättynä sen sinisyyteen,
+		lisättynä yhteen
+		ja kerrottuna 255:llä.

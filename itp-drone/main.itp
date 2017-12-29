@@ -1,9 +1,17 @@
 Kun aloitetaan,
-	ohjattava lennokki suorittaa ohjelman.
+	ohjattavan lennokin lukiessa hyvää kuvadataa käyköön niin, että
+		hyvälle kuvadatalle alustetaan kätevä lohkomatriisi, missä kätevä lohkomatriisi on uusi lohkomatriisi eikä muuta,
+		hyvän kuvadatan jokaisen rivin jokainen pikseli mitataan kätevään lohkomatriisiin
+	ja	kätevän lohkomatriisin punavaltaisin lohko tulostetaan.
+
+Kun pieni lohko tulostetaan,
+	tulostetaan teksti "X: " yhdistettynä sen x-indeksiin vähennettynä 20:lla.
+
+(Yksinkertainen ohjelma:)
 
 Kun ohjattava lennokki suorittaa ohjelman,
 	se nousee ilmaan,
 	se etenee 20 nopeusyksiköllä 2000 millisekunnin kuluttua,
 	se perääntyy 20 nopeusyksiköllä 3000 millisekunnin kuluttua,
-	se pysähtyy 1000 millisekunnin kuluttua
+	se pysähtyy 3000 millisekunnin kuluttua
 ja	se laskeutuu 1000 millisekunnin kuluttua.

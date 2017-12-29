@@ -1,12 +1,14 @@
 ////////////////////////
 // AR DRONE INTERFACE //
 ////////////////////////
+var fs = require('fs');
 
 var arDrone = require('ar-drone');
 lennokki = {};
 lennokki.prototype = arDrone.Client.prototype;
 var ohjattava_lennokki = arDrone.createClient();
 {
+ ohjattava_lennokki.assign = function(n, v) { this[n] = v; };
  // metodit, joilla ei ole parametreja
  const methods0 = {
   nousta_ilmaan: ohjattava_lennokki.takeoff,
@@ -22,7 +24,9 @@ var ohjattava_lennokki = arDrone.createClient();
   nostaa_korkeutta: function(n) { this.up(n/100); },
   laskea_korkeutta: function(n) { this.down(n/100); },
   edetä: function(n) { this.front(n/100); },
-  perääntyä: function(n) { this.back(n/100); }
+  perääntyä: function(n) { this.back(n/100); },
+  kääntyä_myötäpäivään: function(n) { this.clockwise(n/100); },
+  kääntyä_vastapäivään: function(n) { this.counterClockwise(n/100); }
  };
  for (const method in methods1) {
   ohjattava_lennokki[method+"_A_Uo_N"] = methods1[method];
@@ -31,12 +35,18 @@ var ohjattava_lennokki = arDrone.createClient();
  ohjattava_lennokki.suorittaa_A_GSo_N = function(o,u) { this.animate(o, u); };
  ohjattava_lennokki.suorittaa_A_KuluttuaGSo_N = function(t,o,u) { this.after(t, function() { this.animate(o, u); }); };
  ohjattava_lennokki.tehdä_A_KuluttuaG_N = function(t, a) { this.after(t, a); };
+ var i = 0;
  ohjattava_lennokki.getPngStream()
    .on('error', console.log)
    .on('data', function(pngBuffer) {
-    if (ohjattava_lennokki.vastaanottaa_A__N) {
+    i++;
+    //fs.writeFile("testi"+i+".png", pngBuffer,  "binary",function(err) { });
+    if (i%20==0 && ohjattava_lennokki.lukea_A_P_N) {
      var img = new ImageParser(pngBuffer);
-     img.parse(err => ohjattava_lennokki.vastaanottaa_A__N(img));
+     img.parse(err => {
+      if (err) console.log(err);
+      else ohjattava_lennokki.lukea_A_P_N(img);
+     });
     }
   });
 }

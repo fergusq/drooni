@@ -1,17 +1,6 @@
 # == Määritykset ==
 
-# Syöte
-
-Olkoon luettava tiedosto tiedostonimi "testi1.png".
-Olkoon (SVG:hen) merkittävä tiedosto tiedostonimi "testi1.png".
-
-# Kuva
-
-(
-Tärkeä kuvajäsentäjä on olio, joka lukee JPEG-kuvan ja muodostaa siitä kuva-olion.
-)
-
-Olkoon tärkeä kuvajäsentäjä uusi kuvajäsentäjä, jonka sisääntulo on luettava tiedosto.
+# Pikseli
 
 (
 Punavaltaisuus on suure, joka kertoo kuinka punainen pikseli on.
@@ -74,6 +63,20 @@ Lohkorivin suurin punavaltaisuus on pysyvästi
 	joko	sen ensimmäisen lohkon punavaltaisuus
 	tai	sen hännän suurin punavaltaisuus.
 
+Lohkomatriisin punavaltaisin lohko on pysyvästi
+	riippuen siitä, onko sen rivien määrä yksi,
+	joko	sen ensimmäisen rivin punavaltaisin lohko
+	tai riippuen siitä, onko sen ensimmäisen rivin suurin punavaltaisuus suurempi kuin sen alamatriisin suurin punavaltaisuus,
+	joko	sen ensimmäisen rivin punavaltaisin lohko
+	tai	sen alamatriisin punavaltaisin lohko.
+
+Lohkorivin punavaltaisin lohko on pysyvästi
+	riippuen siitä, onko sen lohkojen määrä yksi,
+	joko	sen ensimmäinen lohko
+	tai riippuen siitä, onko sen ensimmäisen lohkon punavaltaisuus suurempi kuin sen hännän suurin punavaltaisuus,
+	joko	sen ensimmäinen lohko
+	tai	sen hännän punavaltaisin lohko.
+
 (
 Ohjelman käyttämä lohkokoko on tässä 20, mutta sitä voi vapaasti muuttaa.
 )
@@ -88,18 +91,6 @@ Sillä voi muuttaa esimerkiksi pikselin koordinaatit lohkon koordinaateiksi.
 Määrä lohkoina on se jaettuna käytetyllä lohkokoolla, kokonaislukuna ja kasvatettuna yhdellä.
 
 # == Metodit ==
-
-# Päämetodi
-
-Kun aloitetaan,
-	tärkeä kuvajäsentäjä jäsentää kuvansa,
-	minkä onnistuessa jäsennetty kuva käsitellään
-	ja minkä epäonnistuessa syntynyt virhe kirjataan lokiin.
-
-Kun nätti kuva käsitellään,
-	sille alustetaan pieni lohkomatriisi, missä pieni lohkomatriisi on uusi lohkomatriisi eikä muuta,
-	sen jokaisen rivin jokainen pikseli mitataan pieneen lohkomatriisiin,
-ja	pieni lohkomatriisi piirretään merkittävään tiedostoon.
 
 # Lohkomatriisin alustaminen
 
@@ -158,4 +149,4 @@ Kun värikäs lohko piirretään,
 		yhdistettynä värikkään lohkon punavaltaisuuteen merkkijonona ja kommenttina,
 		missä	nykyinen x-koordinaatti on värikkään lohkon x-indeksi vähennettynä yhdellä ja kerrottuna käytetyllä lohkokoolla,
 			nykyinen y-koordinaatti on värikkään lohkon y-indeksi vähennettynä yhdellä ja kerrottuna käytetyllä lohkokoolla
-		ja	näytettävä väri on värikkään lohkon värinormalisaation kuutio kerrottuna 1000:lla ja pyöristettynä.
+		ja	näytettävä väri on värikkään lohkon värinormalisaation kuutio kerrottuna 255:llä ja pyöristettynä.

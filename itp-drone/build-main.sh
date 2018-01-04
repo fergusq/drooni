@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-zsh build.sh main.js kuva.js drooni.js src/*.itp
+zsh build.sh main.js js/kuva.js js/drooni.js src/*.itp

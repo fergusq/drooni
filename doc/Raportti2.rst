@@ -5,15 +5,15 @@
 Viikko
 ======
 
-Lauantaista torstaihin
-----------------------
+Lauantaista torstaihin 23.-28.12.
+---------------------------------
 
 Ohjelmoin ehtiessäni kuvantunnistusalgoritmia.
 
 Käytin aikaa n. 4 tuntia.
 
-Perjantai
----------
+Perjantai 29.12.
+----------------
 
 Vierailin pajassa ja testasin kuva-analysointiohjelmaa droonin kanssa.
 

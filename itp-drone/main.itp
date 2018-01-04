@@ -1,17 +1,41 @@
+(
+Aiempi kuvadata.
+)
+
+Olkoon lyhyt kuvamuisti lista, jonka alkioita ovat 0, 0, 0, 0 ja 0.
+
+(
+Pääohjelma.
+)
+
 Kun aloitetaan,
+	ohjattava lennokki suorittaa ohjelman.
+
+Kun mitataan värejä,
 	ohjattavan lennokin lukiessa hyvää kuvadataa käyköön niin, että
 		hyvälle kuvadatalle alustetaan kätevä lohkomatriisi, missä kätevä lohkomatriisi on uusi lohkomatriisi eikä muuta,
-		hyvän kuvadatan jokaisen rivin jokainen pikseli mitataan kätevään lohkomatriisiin
-	ja	kätevän lohkomatriisin punavaltaisin lohko tulostetaan.
+		hyvän kuvadatan jokaisen rivin jokainen pikseli mitataan kätevään lohkomatriisiin,
+		löydetty lohko tulostetaan, missä löydetty lohko on kätevän lohkomatriisin punavaltaisin lohko eikä muuta,
+		lyhyeksi kuvamuistiksi asetetaan lyhyen kuvamuistin häntä,
+		lyhyeen kuvamuistiin lisätään löydetyn lohkon x-indeksi
+	ja,	jos löydetyn lohkon punavaltaisuus on suurempi kuin 140, niin
+			tulostetaan teksti "RAJA-ARVO YLITTYI".
 
 Kun pieni lohko tulostetaan,
-	tulostetaan teksti "X: " yhdistettynä sen x-indeksiin vähennettynä 20:lla.
+	tulostetaan
+		teksti "P: "
+		yhdistettynä sen punavaltaisuuteen,
+		yhdistettynä tekstiin " M(X): ",
+		yhdistettynä järjestetyn listan kolmanteen alkioon,
+		yhdistettynä tekstiin " X: " ja
+		yhdistettynä sen x-indeksiin vähennettynä 20:lla,
+	missä	järjestetty lista on lyhyt kuvamuisti järjestettynä.
 
 (Yksinkertainen ohjelma:)
 
 Kun ohjattava lennokki suorittaa ohjelman,
 	se nousee ilmaan,
 	se etenee 20 nopeusyksiköllä 2000 millisekunnin kuluttua,
-	se perääntyy 20 nopeusyksiköllä 3000 millisekunnin kuluttua,
-	se pysähtyy 3000 millisekunnin kuluttua
+	se perääntyy 20 nopeusyksiköllä 7000 millisekunnin kuluttua,
+	se pysähtyy 5000 millisekunnin kuluttua
 ja	se laskeutuu 1000 millisekunnin kuluttua.

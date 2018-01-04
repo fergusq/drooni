@@ -2,8 +2,8 @@
 
 # Syöte
 
-Olkoon luettava tiedosto tiedostonimi "testi1.png".
-Olkoon (SVG:hen) merkittävä tiedosto tiedostonimi "testi1.png".
+Olkoon luettava tiedosto ensimmäinen annettu argumentti.
+Olkoon (SVG:hen) merkittävä tiedosto toinen annettu argumentti.
 
 # Kuva
 
@@ -12,80 +12,6 @@ Tärkeä kuvajäsentäjä on olio, joka lukee JPEG-kuvan ja muodostaa siitä kuv
 )
 
 Olkoon tärkeä kuvajäsentäjä uusi kuvajäsentäjä, jonka sisääntulo on luettava tiedosto.
-
-(
-Punavaltaisuus on suure, joka kertoo kuinka punainen pikseli on.
-Se lasketaan kaavalla R^2/[[R+G+B+1]*255].
-)
-
-Pikselin punavaltaisuus on
-	sen punaisuuden toinen potenssi jaettuna
-		sen punaisuudella
-		lisättynä sen vihreyteen,
-		lisättynä sen sinisyyteen,
-		lisättynä yhteen
-		ja kerrottuna 255:llä.
-
-# Lohkot
-
-(
-Ohjelma jakaa kuvan neliön muotoisiin lohkoihin.
-Sivun pituus on käytetty lohkokoko -muuttujassa.
-Lohkot tallennetaan lohkomatriisiin sisältämiin lohkoriveihin.
-
-Lohkon punavaltaisuus on sen sisältämien pikselien punavaltaisuuksien summa.
-)
-
-Lohkomatriisilla on rivit.
-Lohkorivillä on lohkot.
-Lohkolla on punavaltaisuus, x-indeksi ja y-indeksi.
-
-(
-Lohkon värinormalisaatio skaalaa yksittäisen lohkon punavaltaisuuden välille 0-1
-jakamalla sen matriisin suurimmalla punavaltaisuudella.
-)
-
-Lohkon värinormalisaatio on sen punavaltaisuus jaettuna käytetyn lohkokoon neliöllä.
-
-(
-Lohkomatriisin alamatriisi ja lohkorivin häntä ovat apufunktioita, joiden avulla iteroidaan kaikki lohkot läpi.
-Ne palauttavat kumpikin omat alkionsa lukuun ottamatta ensimmäistä.
-)
-
-Lohkomatriisin alamatriisi on pysyvästi uusi lohkomatriisi, jonka rivit ovat sen rivit toisesta alkaen.
-Lohkorivin häntä on pysyvästi uusi lohkorivi, jonka lohkot ovat sen lohkot toisesta alkaen.
-
-(
-Lohkomatriisin suurin punavaltaisuus lasketaan iteroimalla kaikki rivit läpi,
-ja jokaisella rivillä kaikki lohkot.
-)
-
-Lohkomatriisin suurin punavaltaisuus on pysyvästi
-	riippuen siitä, onko sen rivien määrä nolla,
-	joko	nolla
-	tai riippuen siitä, onko sen ensimmäisen rivin suurin punavaltaisuus suurempi kuin sen alamatriisin suurin punavaltaisuus,
-	joko	sen ensimmäisen rivin suurin punavaltaisuus
-	tai	sen alamatriisin suurin punavaltaisuus.
-
-Lohkorivin suurin punavaltaisuus on pysyvästi
-	riippuen siitä, onko sen lohkojen määrä nolla,
-	joko	nolla
-	tai riippuen siitä, onko sen ensimmäisen lohkon punavaltaisuus suurempi kuin sen hännän suurin punavaltaisuus,
-	joko	sen ensimmäisen lohkon punavaltaisuus
-	tai	sen hännän suurin punavaltaisuus.
-
-(
-Ohjelman käyttämä lohkokoko on tässä 20, mutta sitä voi vapaasti muuttaa.
-)
-
-Olkoon käytetty lohkokoko 20.
-
-(
-Lohkoina-funktio muuttaa annetun pikselimäärän lohkomääräksi.
-Sillä voi muuttaa esimerkiksi pikselin koordinaatit lohkon koordinaateiksi.
-)
-
-Määrä lohkoina on se jaettuna käytetyllä lohkokoolla, kokonaislukuna ja kasvatettuna yhdellä.
 
 # == Metodit ==
 
@@ -100,62 +26,3 @@ Kun nätti kuva käsitellään,
 	sille alustetaan pieni lohkomatriisi, missä pieni lohkomatriisi on uusi lohkomatriisi eikä muuta,
 	sen jokaisen rivin jokainen pikseli mitataan pieneen lohkomatriisiin,
 ja	pieni lohkomatriisi piirretään merkittävään tiedostoon.
-
-# Lohkomatriisin alustaminen
-
-Kun nätille kuvalle alustetaan nätti lohkomatriisi,
-	toistetaan n kertaa se, että
-		nätin lohkomatriisin riviksi lisätään uusi lohkorivi,
-		toistetaan m kertaa se, että
-			nätin lohkomatriisin viimeisen rivin lohkoksi lisätään
-				uusi lohko, jonka
-					punavaltaisuus on nolla,
-					x-indeksi on nätin lohkomatriisin viimeisen rivin lohkojen määrän seuraaja
-				ja	y-indeksi on nätin lohkomatriisin rivien määrä,
-			eikä muuta,
-	eikä muuta,	missä	n on nätin kuvan korkeus lohkoina
-			ja	m on nätin kuvan leveys lohkoina.
-
-# Pikselin punavaltaisuuksien mittaaminen
-
-Kun pieni pikseli mitataan nättiin lohkomatriisiin,
-	nykyisen lohkon punavaltaisuutta kasvatetaan pienen pikselin punavaltaisuudella,
-		missä	x on pienen pikselin x-koordinaatti lohkoina,
-			y on pienen pikselin y-koordinaatti lohkoina
-		ja	nykyinen lohko on nätin lohkomatriisin y:nnen rivin x:s lohko.
-
-# SVG:n luominen piirtäminen
-
-Merkkijono kommenttina on koodi "<!--" yhdistettynä siihen ja yhdistettynä koodiin "-->".
-
-(
-SVG sisältää taustalla syötekuvan ja sen päällä lohkoja esittävät neliöt.
-Jokaisen neliön väri määräytyy vastaavan lohkon punavaltaisuudesta kaavalla N^3*255,
-missä N on lohkon värinormalisaatio.
-)
-
-Kun pieni lohkomatriisi piirretään haluttuun tiedostoon,
-	tulostetaan pienen lohkomatriisin suurin punavaltaisuus merkkijonona ja kommenttina,
-	tulostetaan koodi "<svg>" sekä
-		koodi "<image x=\l0\l y=\l0\l width=\l100%\l height=\l100%\l xlink:href=\l"
-		yhdistettynä haluttuun tiedostoon
-		ja yhdistettynä koodiin "\l />",
-	pienen lohkomatriisin jokaisen rivin jokainen lohko piirretään
-ja	tulostetaan koodi "</svg>".
-
-Kun värikäs lohko piirretään,
-	tulostetaan koodi "<rect x=\l"
-		yhdistettynä nykyiseen x-koordinaattiin,
-		yhdistettynä koodiin "\l y=\l",
-		yhdistettynä nykyiseen y-koordinaattiin,
-		yhdistettynä koodiin "\l width=\l",
-		yhdistettynä käytettyyn lohkokokoon,
-		yhdistettynä koodiin "\l height=\l",
-		yhdistettynä käytettyyn lohkokokoon,
-		yhdistettynä koodiin "\l fill=\lrgba(0,0,",
-		yhdistettynä näytettävään väriin,
-		yhdistettynä koodiin ",80%)\l /> " ja
-		yhdistettynä värikkään lohkon punavaltaisuuteen merkkijonona ja kommenttina,
-		missä	nykyinen x-koordinaatti on värikkään lohkon x-indeksi vähennettynä yhdellä ja kerrottuna käytetyllä lohkokoolla,
-			nykyinen y-koordinaatti on värikkään lohkon y-indeksi vähennettynä yhdellä ja kerrottuna käytetyllä lohkokoolla
-		ja	näytettävä väri on värikkään lohkon värinormalisaation kuutio kerrottuna 1000:lla ja pyöristettynä.

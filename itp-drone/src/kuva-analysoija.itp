@@ -4,16 +4,17 @@
 
 (
 Punavaltaisuus on suure, joka kertoo kuinka punainen pikseli on.
-Se lasketaan kaavalla R^2/[[R+G+B+1]*255].
+Se lasketaan kaavalla [R/255]*[[R+1]/[R+G+B+1]]^2.
 )
 
 Pikselin punavaltaisuus on
-	sen punaisuuden toinen potenssi jaettuna
-		sen punaisuudella
-		lisättynä sen vihreyteen,
-		lisättynä sen sinisyyteen,
-		lisättynä yhteen
-		ja kerrottuna 255:llä.
+	sen punaisuuden 255-normalisaatio kerrottuna
+	sen punasuhteen toisella potenssilla.
+
+Pikselin punasuhde on sen punaisuuden seuraaja jaettuna sen värisumman seuraajalla ([R+1]/[R+G+B+1]).
+Pikselin värisumma on sen punaisuus lisättynä sen sinisyyteen ja lisättynä sen vihreyteen (R+G+B).
+
+Luvun 255-normalisaatio on se jaettuna 255:llä.
 
 # Lohkot
 
@@ -27,14 +28,14 @@ Lohkon punavaltaisuus on sen sisältämien pikselien punavaltaisuuksien summa.
 
 Lohkomatriisilla on rivit.
 Lohkorivillä on lohkot.
-Lohkolla on punavaltaisuus, x-indeksi ja y-indeksi.
+Lohkolla on lohkomatriisi, punavaltaisuus, x-indeksi ja y-indeksi.
 
 (
 Lohkon värinormalisaatio skaalaa yksittäisen lohkon punavaltaisuuden välille 0-1
 jakamalla sen matriisin suurimmalla punavaltaisuudella.
 )
 
-Lohkon värinormalisaatio on sen punavaltaisuus jaettuna käytetyn lohkokoon neliöllä.
+Lohkon värinormalisaatio on sen punavaltaisuus jaettuna sen lohkomatriisin suurimmalla punavaltaisuudella.
 
 (
 Lohkomatriisin alamatriisi ja lohkorivin häntä ovat apufunktioita, joiden avulla iteroidaan kaikki lohkot läpi.
@@ -100,6 +101,7 @@ Kun nätille kuvalle alustetaan nätti lohkomatriisi,
 		toistetaan m kertaa se, että
 			nätin lohkomatriisin viimeisen rivin lohkoksi lisätään
 				uusi lohko, jonka
+					lohkomatriisi on nätti lohkomatriisi,
 					punavaltaisuus on nolla,
 					x-indeksi on nätin lohkomatriisin viimeisen rivin lohkojen määrän seuraaja
 				ja	y-indeksi on nätin lohkomatriisin rivien määrä,

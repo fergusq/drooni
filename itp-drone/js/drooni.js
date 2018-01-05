@@ -4,8 +4,6 @@
 var fs = require('fs');
 
 var arDrone = require('ar-drone');
-lennokki = {};
-lennokki.prototype = arDrone.Client.prototype;
 var ohjattava_lennokki = arDrone.createClient();
 {
  ohjattava_lennokki.assign = function(n, v) { this[n] = v; };
@@ -40,8 +38,8 @@ var ohjattava_lennokki = arDrone.createClient();
    .on('error', console.log)
    .on('data', function(pngBuffer) {
     i++;
-    //fs.writeFile("testi"+i+".png", pngBuffer,  "binary",function(err) { });
     if (i%20==0 && ohjattava_lennokki.lukea_A_P_N) {
+     fs.writeFile("testi.png", pngBuffer,  "binary",function(err) { });
      var img = new ImageParser(pngBuffer);
      img.parse(err => {
       if (err) console.log(err);

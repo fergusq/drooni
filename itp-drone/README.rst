@@ -13,8 +13,10 @@ Hakemistorakenne
       main.itp               Pääohjelma
       kuva-analysoija.itp    Kuva-analysointikirjasto
     js/                    JavaScript/ITP-yhteensopivuuskirjasto
-      drooni.js              ar-dronen kirjasto
-      kuva.js                Kuvajäsentimen kirjasto
+      drooni.itp             ar-dronen kirjaston ITP-osa
+      drooni.js              ar-dronen kirjaston JavaScript-osa
+      kuva.itp               Kuvajäsentimen kirjaston ITP-osa
+      kuva.js                Kuvajäsentimen kirjaston JavaScript-osa
     testit/                Testiohjelmia
       kuva-analysoija2.itp   Kuva-analysoijan testiohjelma
 
@@ -33,11 +35,11 @@ Varmista ennen kääntämistä, että ``$TAMPIO_HOME``-ympäristömuuttuja on as
 
 Ohjelma käännetään ``build.sh``-komennolla::
 
-    ./build.sh <ulostulotiedosto> <sisääntulotiedostot>
+    ./build.sh -o <ulostulotiedosto> <sisääntulotiedosto>
 
 Kuva-analysoijan testiohjelman kääntäminen::
 
-    ./build.sh ka.js js/kuva.js src/kuva-analysoija.js testit/kuva-analysoija2.js
+    ./build.sh -o ka.js testit/kuva-analysoija2.js
 
 Komento luo tiedoston ``ka.js`` annetuista tiedostoista.
 

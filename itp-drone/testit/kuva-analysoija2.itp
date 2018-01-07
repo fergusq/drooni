@@ -25,6 +25,6 @@ Kun aloitetaan,
 	ja minkä epäonnistuessa syntynyt virhe kirjataan lokiin.
 
 Kun nätti kuva käsitellään,
-	sille alustetaan pieni lohkomatriisi, missä pieni lohkomatriisi on uusi lohkomatriisi eikä muuta,
+	sille alustetaan pieni uusi lohkomatriisi,
 	sen jokaisen rivin jokainen pikseli mitataan pieneen lohkomatriisiin,
 ja	pieni lohkomatriisi piirretään merkittävään tiedostoon.

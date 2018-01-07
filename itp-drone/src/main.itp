@@ -22,7 +22,7 @@ Kun mitataan värejä,
 		ohjattava lennokki laskeutuu
 	eikä	muuta
 ja	ohjattavan lennokin lukiessa hyvää kuvadataa käyköön niin, että
-		hyvälle kuvadatalle alustetaan kätevä lohkomatriisi, missä kätevä lohkomatriisi on uusi lohkomatriisi eikä muuta,
+		hyvälle kuvadatalle alustetaan kätevä uusi lohkomatriisi,
 		hyvän kuvadatan jokaisen rivin jokainen pikseli mitataan kätevään lohkomatriisiin,
 		löydetty lohko tulostetaan, missä löydetty lohko on kätevän lohkomatriisin punavaltaisin lohko eikä muuta,
 		lyhyeksi kuvamuistiksi asetetaan lyhyen kuvamuistin häntä,

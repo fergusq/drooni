@@ -24,6 +24,6 @@ while [ "$#" -gt 0 ]; do
 done
 
 {
-	python3 "$TAMPIO_HOME"/tampio.py "$IN"
+	python3 "$TAMPIO_HOME"/tampio.py -i "$IN"
 	echo "aloittaa_();"
 } >"$OUT"

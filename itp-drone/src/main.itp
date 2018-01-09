@@ -18,18 +18,18 @@ Kun mitataan värejä,
 	tehdään 5000 millisekunnin kuluttua se, että
 		ohjattava lennokki nousee ilmaan
 	eikä muuta,
-	tehdään 15000 millisekunnin kuluttua se, että
+	tehdään 25000 millisekunnin kuluttua se, että
 		ohjattava lennokki laskeutuu
-	eikä	muuta
+	eikä muuta
 ja	ohjattavan lennokin lukiessa hyvää kuvadataa käyköön niin, että
 		hyvälle kuvadatalle alustetaan kätevä uusi lohkomatriisi,
 		hyvän kuvadatan jokaisen rivin jokainen pikseli mitataan kätevään lohkomatriisiin,
-		löydetty lohko tulostetaan, missä löydetty lohko on kätevän lohkomatriisin punavaltaisin lohko eikä muuta,
+		löydetty lohko, joka on kätevän lohkomatriisin punavaltaisin lohko, tulostetaan,
 		lyhyeksi kuvamuistiksi asetetaan lyhyen kuvamuistin häntä,
 		lyhyeen kuvamuistiin lisätään löydetyn lohkon x-indeksi
 	ja,	jos löydetyn lohkon punavaltaisuus on suurempi kuin 50, niin
 			ohjattava lennokki etenee 50 nopeusyksiköllä,
-			tehdään 3000 millisekunnin kuluttua se, että
+			tehdään 5000 millisekunnin kuluttua se, että
 				ohjattava lennokki pysähtyy
 			eikä muuta
 		ja	tulostetaan teksti "RAJA-ARVO YLITTYI".

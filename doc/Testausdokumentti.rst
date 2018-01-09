@@ -33,8 +33,18 @@ Ilmatestaus
 
 Ohjelmoin droonin lentämään ja liikkumaan nähdessään raja-arvon ylittävää punaisuutta.
 
-Tähän mennessä tulokset ovat olleet huonoja, sillä olen päässyt testaamaan robottia vain illalla pimeässä.
+Pimeässä
+````````
+
+Tulokset olivat huonoja, kun testasin robottia illalla pimeässä.
 Se osaa huomata punaisen värin, jos sitä valaisee taskulampulla ja pitää aivan robotin edessä (< 30 cm),
 mutta ei juuri muulloin.
 
 Drooni ei osaa pysyä paikallaan, mikä vaikeuttaa testaamista.
+
+Valoisan aikaan
+```````````````
+
+Robotti pysyy hieman paremmin paikallaan valoisan aikaan.
+Se myös osaa suuren osan ajasta havaita punaisen esineen, mutta tekee joskus vääriä havaintoja.
+Myöskin satunnaiset punaiset esineet (ohikulkijat, joilla punaisia vaatteita; punaiset talot tms.) haittaavat algoritmin toimintaa.

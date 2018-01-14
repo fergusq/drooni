@@ -52,19 +52,8 @@ Lohkomatriisin suurin punavaltaisuus lasketaan iteroimalla kaikki rivit läpi,
 ja jokaisella rivillä kaikki lohkot.
 )
 
-Lohkomatriisin suurin punavaltaisuus on pysyvästi
-	riippuen siitä, onko sen rivien määrä nolla,
-	joko	nolla
-	tai riippuen siitä, onko sen ensimmäisen rivin suurin punavaltaisuus suurempi kuin sen alamatriisin suurin punavaltaisuus,
-	joko	sen ensimmäisen rivin suurin punavaltaisuus
-	tai	sen alamatriisin suurin punavaltaisuus.
-
-Lohkorivin suurin punavaltaisuus on pysyvästi
-	riippuen siitä, onko sen lohkojen määrä nolla,
-	joko	nolla
-	tai riippuen siitä, onko sen ensimmäisen lohkon punavaltaisuus suurempi kuin sen hännän suurin punavaltaisuus,
-	joko	sen ensimmäisen lohkon punavaltaisuus
-	tai	sen hännän suurin punavaltaisuus.
+Lohkomatriisin suurin punavaltaisuus on sen punavaltaisimman lohkon punavaltaisuus.
+Lohkorivin suurin punavaltaisuus on sen punavaltaisimman lohkon punavaltaisuus.
 
 Lohkomatriisin punavaltaisin lohko on pysyvästi
 	riippuen siitä, onko sen rivien määrä yksi,

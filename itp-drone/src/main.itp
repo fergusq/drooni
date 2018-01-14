@@ -2,47 +2,40 @@ Sisällytä tiedosto "src/kuva-analysoija.itp".
 Sisällytä tiedosto "js/drooni.itp".
 
 (
-Aiempi kuvadata.
-)
-
-Olkoon lyhyt kuvamuisti lista, jonka alkioita ovat 0, 0, 0, 0 ja 0.
-
-(
 Pääohjelma.
 )
 
 Kun aloitetaan,
-	mitataan värejä.
+	pidetään robotti ilmassa 20000 millisekuntia
+ja	mitataan värejä.
 
 Kun mitataan värejä,
-	tehdään 5000 millisekunnin kuluttua se, että
-		ohjattava lennokki nousee ilmaan
-	eikä muuta,
-	tehdään 25000 millisekunnin kuluttua se, että
-		ohjattava lennokki laskeutuu
-	eikä muuta
-ja	ohjattavan lennokin lukiessa hyvää kuvadataa käyköön niin, että
+	ohjattavan lennokin lukiessa hyvää kuvadataa käyköön niin, että
 		hyvälle kuvadatalle alustetaan kätevä uusi lohkomatriisi,
 		hyvän kuvadatan jokaisen rivin jokainen pikseli mitataan kätevään lohkomatriisiin,
 		löydetty lohko, joka on kätevän lohkomatriisin punavaltaisin lohko, tulostetaan,
-		lyhyeksi kuvamuistiksi asetetaan lyhyen kuvamuistin häntä,
-		lyhyeen kuvamuistiin lisätään löydetyn lohkon x-indeksi
 	ja,	jos löydetyn lohkon punavaltaisuus on suurempi kuin 50, niin
-			ohjattava lennokki etenee 50 nopeusyksiköllä,
-			tehdään 5000 millisekunnin kuluttua se, että
+			tulostetaan teksti "RAJA-ARVO YLITTYI",
+			ohjattava lennokki etenee 50 nopeusyksiköllä
+		ja	tehdään 5000 millisekunnin kuluttua se, että
 				ohjattava lennokki pysähtyy
-			eikä muuta
-		ja	tulostetaan teksti "RAJA-ARVO YLITTYI".
+			ja	tulostetaan teksti "PYSÄYTYS".
+
+Kun pidetään robotti ilmassa haluttu aika,
+	tehdään 5000 millisekunnin kuluttua se, että
+		ohjattava lennokki nousee ilmaan
+	eikä muuta
+ja	tehdään lasketun ajan kuluttua se, että
+		ohjattava lennokki laskeutuu
+	eikä muuta,
+	missä laskettu aika on haluttu aika kasvatettuna 5000 millisekunnilla.
 
 Kun pieni lohko tulostetaan,
 	tulostetaan
 		teksti "P: "
 		yhdistettynä sen punavaltaisuuteen,
-		yhdistettynä tekstiin " M(X): ",
-		yhdistettynä järjestetyn listan kolmanteen alkioon,
 		yhdistettynä tekstiin " X: " ja
-		yhdistettynä sen x-indeksiin vähennettynä 20:lla,
-	missä	järjestetty lista on lyhyt kuvamuisti järjestettynä.
+		yhdistettynä sen x-indeksiin vähennettynä 20:lla.
 
 (Yksinkertainen ohjelma:)
 

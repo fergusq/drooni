@@ -2,33 +2,81 @@ Sisällytä tiedosto "src/kuva-analysoija.itp".
 Sisällytä tiedosto "js/drooni.itp".
 
 (
+Ohjelman tila: joko "tarkkailee" tai "etenee".
+)
+
+Olkoon nykyinen tila "tarkkailee".
+
+(
 Pääohjelma.
 )
 
 Kun aloitetaan,
-	pidetään robotti ilmassa 20000 millisekuntia
+	pidetään robotti ilmassa 40000 millisekuntia
 ja	mitataan värejä.
 
-Kun mitataan värejä,
-	ohjattavan lennokin lukiessa hyvää kuvadataa käyköön niin, että
-		hyvälle kuvadatalle alustetaan kätevä uusi lohkomatriisi,
-		hyvän kuvadatan jokaisen rivin jokainen pikseli mitataan kätevään lohkomatriisiin,
-		löydetty lohko, joka on kätevän lohkomatriisin punavaltaisin lohko, tulostetaan,
-	ja,	jos löydetyn lohkon punavaltaisuus on suurempi kuin 50, niin
-			tulostetaan teksti "RAJA-ARVO YLITTYI",
-			ohjattava lennokki etenee 50 nopeusyksiköllä
-		ja	tehdään 5000 millisekunnin kuluttua se, että
-				ohjattava lennokki pysähtyy
-			ja	tulostetaan teksti "PYSÄYTYS".
+(
+Apurutiini, joka nostaa lennokin ilmaan ja varmistaa varmistaa, että se laskeutuu määritellyn ajan jälkeen.
+Tämä turvallisuuden vuoksi: lennokki laskeutuu varmasti.
+)
 
 Kun pidetään robotti ilmassa haluttu aika,
 	tehdään 5000 millisekunnin kuluttua se, että
 		ohjattava lennokki nousee ilmaan
 	eikä muuta
-ja	tehdään lasketun ajan kuluttua se, että
+ja	tehdään lasketun ajan kuluttua se, että,
+		jos nykyinen tila on teksti "etenee", niin
+			ohjattava lennokki pysähtyy
+		eikä muuta,
 		ohjattava lennokki laskeutuu
 	eikä muuta,
 	missä laskettu aika on haluttu aika kasvatettuna 5000 millisekunnilla.
+
+(
+Kuvadatan analysoiminen.
+)
+
+Olkoon loistava laskuri muuttuja, jonka arvo on nolla.
+
+Kun mitataan värejä,
+	ohjattavan lennokin lukiessa hyvää kuvadataa käyköön niin, että,
+		jos nykyinen tila on teksti "tarkkailee", niin
+			hyvälle kuvadatalle alustetaan kätevä uusi lohkomatriisi,
+			hyvän kuvadatan jokaisen rivin jokainen pikseli mitataan kätevään lohkomatriisiin,
+			löydetty lohko, joka on kätevän lohkomatriisin punavaltaisin lohko, tulostetaan,
+			jos löydetyn lohkon punavaltaisuus on suurempi kuin 50, niin
+				loistavan laskurin arvoksi asetetaan nolla,
+				tulostetaan teksti "RAJA-ARVO YLITTYI"
+			ja	edetään
+		ja,	jos löydetyn lohkon punavaltaisuus on pienempi tai yhtä suuri kuin 50, niin
+				loistavan laskurin arvoa kasvatetaan yhdellä
+			ja,	jos loistavan laskurin arvo on 3, niin
+					loistavan laskurin arvoksi asetetaan nolla,
+					tulostetaan teksti "EI MITÄÄN"
+				ja	käännytään.
+
+(
+Aliohjelmat lennokin komentamista varten.
+)
+
+Kun edetään,
+	nykyiseksi tilaksi asetetaan teksti "etenee",
+	ohjattava lennokki etenee 50 nopeusyksiköllä
+ja	tehdään 5000 millisekunnin kuluttua se, että
+		tulostetaan teksti "PYSÄYTYS",
+		ohjattava lennokki pysähtyy,
+	ja	nykyiseksi tilaksi asetetaan teksti "tarkkailee".
+
+Kun käännytään,
+	nykyiseksi tilaksi asetetaan teksti "etenee",
+	ohjattava lennokki pysähtyy,
+	ohjattava lennokki suorittaa ohjelman "turnaround" 1000 millisekunnissa
+ja	tehdään 2000 millisekunnin kuluttua se, että
+		nykyiseksi tilaksi asetetaan teksti "tarkkailee".
+
+(
+Debug-tiedon tulostaminen.
+)
 
 Kun pieni lohko tulostetaan,
 	tulostetaan
@@ -36,12 +84,3 @@ Kun pieni lohko tulostetaan,
 		yhdistettynä sen punavaltaisuuteen,
 		yhdistettynä tekstiin " X: " ja
 		yhdistettynä sen x-indeksiin vähennettynä 20:lla.
-
-(Yksinkertainen ohjelma:)
-
-Kun ohjattava lennokki suorittaa ohjelman,
-	(se nousee ilmaan,
-	se etenee 20 nopeusyksiköllä 2000 millisekunnin kuluttua,
-	se perääntyy 20 nopeusyksiköllä 7000 millisekunnin kuluttua,)
-	se pysähtyy 1000 millisekunnin kuluttua
-ja	se laskeutuu 1000 millisekunnin kuluttua.

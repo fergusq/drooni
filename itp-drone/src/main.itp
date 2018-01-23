@@ -43,6 +43,7 @@ Kun mitataan värejä,
 		jos nykyinen tila on teksti "tarkkailee", niin
 			hyvälle kuvadatalle alustetaan kätevä uusi lohkomatriisi,
 			hyvän kuvadatan jokaisen rivin jokainen pikseli mitataan kätevään lohkomatriisiin,
+			kätevän lohkomatriisin reunan jokainen lohko nollataan,
 			löydetty lohko, joka on kätevän lohkomatriisin punavaltaisin lohko, tulostetaan,
 			jos löydetyn lohkon punavaltaisuus on suurempi kuin 50, niin
 				loistavan laskurin arvoksi asetetaan nolla,

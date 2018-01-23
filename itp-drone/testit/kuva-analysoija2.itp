@@ -27,4 +27,5 @@ Kun aloitetaan,
 Kun nätti kuva käsitellään,
 	sille alustetaan pieni uusi lohkomatriisi,
 	sen jokaisen rivin jokainen pikseli mitataan pieneen lohkomatriisiin,
+	pienen lohkomatriisin reunan jokainen lohko nollataan
 ja	pieni lohkomatriisi piirretään merkittävään tiedostoon.

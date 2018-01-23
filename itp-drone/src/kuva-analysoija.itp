@@ -48,6 +48,12 @@ Lohkomatriisin alamatriisi on pysyvästi uusi lohkomatriisi, jonka rivit ovat se
 Lohkorivin häntä on pysyvästi uusi lohkorivi, jonka lohkot ovat sen lohkot toisesta alkaen.
 
 (
+Lohkorivi sisällytettynä toiseen lohkoriviin on uusi lohkorivi, joka sisältää molempien lohkorivien lohkot.
+)
+
+Mahtava lohkorivi sisällytettynä loistavaan lohkoriviin on lohkorivi, jonka lohkot ovat mahtavan lohkorivin lohkot yhdistettynä loistavan lohkorivin lohkoihin.
+
+(
 Lohkomatriisin suurin punavaltaisuus lasketaan iteroimalla kaikki rivit läpi,
 ja jokaisella rivillä kaikki lohkot.
 )
@@ -68,6 +74,20 @@ Lohkorivin punavaltaisin lohko on pysyvästi
 	tai riippuen siitä, onko sen ensimmäisen lohkon punavaltaisuus suurempi kuin sen hännän suurin punavaltaisuus,
 	joko	sen ensimmäinen lohko
 	tai	sen hännän punavaltaisin lohko.
+
+(
+Lohkomatriisin reuna on vaakasuunnassa kolmasosa sekä vasemmalta että oikealta.
+)
+
+Lohkomatriisin reuna on
+	riippuen siitä, onko sen rivien määrä nolla,
+	joko uusi lohkorivi
+	tai sen ensimmäisen rivin reuna sisällytettynä sen alamatriisin reunaan.
+
+Lohkorivin reuna on
+	uusi lohkorivi, jonka lohkot ovat sen lohkot n:nteen päättyen yhdistettynä sen lohkoihin m:nnestä alkaen eikä muuta,
+	missä	n on sen lohkojen määrä jaettuna kolmella
+	ja	m on sen lohkojen määrä jaettuna kolmella ja kerrottuna kahdella.
 
 (
 Ohjelman käyttämä lohkokoko on tässä 20, mutta sitä voi vapaasti muuttaa.
@@ -107,6 +127,11 @@ Kun pieni pikseli mitataan nättiin lohkomatriisiin,
 		missä	x on pienen pikselin x-koordinaatti lohkoina,
 			y on pienen pikselin y-koordinaatti lohkoina
 		ja	nykyinen lohko on nätin lohkomatriisin y:nnen rivin x:s lohko.
+
+# Lohkon nollaaminen
+
+Kun ruma lohko nollataan,
+	sen punavaltaisuudeksi asetetaan nolla.
 
 # SVG:n luominen piirtäminen
 

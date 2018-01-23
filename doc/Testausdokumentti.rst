@@ -9,6 +9,7 @@ Kuva-analysointialgoritmi
 --------------
 
 ``kuva-analysoija2.itp`` on skripti, jonka avulla voi käyttää kuva-analysointialgoritmia ilman droonia.
+Ohjelma antaa luo annetusta kuvasta SVG-kuvan, johon on merkitty punaiseksi tunnistetut alueet.
 Annan valmiiksi otettuja kuvia algoritmille ja tutkin lopputulosta.
 Käyttämiäni kuvia on testit-kansiossa.
 
